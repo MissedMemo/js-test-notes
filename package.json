@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "test": "jest",
+    "explore-fetch": "open src/async/fetch-promises.html"
+  },
+  "dependencies": {
+    "jest": "^23.6.0",
+    "node-fetch": "^2.3.0"
+  }
+}
