@@ -8,9 +8,27 @@
   <body>
     <h1>Star Wars API</h1>
     <div id="spinner">
-      <img src="spinner.gif" alt="spinner" height="72">
+      <img src="spinner.gif" alt="spinner" height="36">
     </div>
     <div id="output"></div>
-    <script src='./fetch-promises.js'></script>
+    <script src='./swapi-client.js'></script>
+    <script>
+      const spinner = document.getElementById("spinner")
+      const output = (node => data => node.innerText = data )(document.getElementById('output'))
+      const sleep = period => new Promise( resolve => setTimeout(resolve,period) )
+
+      const getTitles = films =>
+        films.map( film => `${film.episode_id}. ${film.title}` )
+          .sort()
+          .join('\n')
+
+      query('films')
+        .then( data => {
+          output( getTitles(data.results) )     
+        })
+        .catch( err => output(err) )
+        .finally( () => spinner.remove() )
+      
+    </script>
   </body>
 </html>
