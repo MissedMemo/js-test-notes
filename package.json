@@ -2,7 +2,8 @@
   "scripts": {
     "test-async": "jest async",
     "test-recursion": "jest recursion",
-    "explore-fetch": "open src/async/fetch-promises.html"
+    "explore-fetch": "open src/async/fetch-promises.html",
+    "test-swapi": "jest swapi-client"
   },
   "dependencies": {
     "jest": "^23.6.0",
